@@ -1,0 +1,243 @@
+.post {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    border: 1px solid #474747;
+    padding: 20px 20px;
+    position: relative;
+
+    &.openComment {
+        background-color: rgb(44, 44, 44);
+        border: 1px solid #939393;
+    }
+
+    .contentBlock {
+        width: 80%;
+        align-items: start;
+        border-radius: 20px;
+        justify-content: space-between;
+        gap: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .headerPost {
+        width: 100%;
+        position: relative;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: 5px;
+
+        .delete {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: 0;
+            top: 0;
+            background-image: url(/../public/images/close.svg);
+            background-size: 50%;
+            background-repeat: no-repeat;
+            background-position: 0;
+            background-position-x: 50%;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+            border-radius: 50%;
+
+            &:hover {
+                background-color: rgb(236, 236, 236);
+            }
+        }
+
+        .title {
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+
+            &::first-letter {
+                text-transform: uppercase;
+            }
+        }
+
+        .date {
+            color: #939393;
+            font-weight: bold;
+            font-size: 13px;
+        }
+
+
+    }
+
+    .content {
+        .text {
+            font-size: 15px;
+            color: rgb(236, 236, 236)
+        }
+    }
+
+    .commnetButtonDiv {
+
+        position: absolute;
+        right: 5px;
+        bottom: 5px;
+
+        span {
+            pointer-events: none;
+            color: rgb(177, 177, 177);
+            position: absolute;
+            right: -3px;
+            bottom: -3px;
+        }
+
+        .commentButton {
+            background-image: url(../../../public/images/comment.svg);
+            width: 16px;
+            height: 16px;
+            background-color: transparent;
+            background-size: 100%;
+            border: none;
+            outline: none;
+            cursor: pointer;
+
+            &:hover {
+                opacity: 0.5;
+            }
+        }
+    }
+
+    .menu {
+        position: absolute;
+        right: 5px;
+        top: 5px;
+
+        button {
+            border: none;
+            background: transparent;
+            outline: none;
+            background-size: 90%;
+            background-repeat: no-repeat;
+            cursor: pointer;
+
+            &:hover {
+                opacity: 0.5;
+            }
+        }
+
+        .openMenu {
+            background-image: url(../../../public/images/dots.svg);
+            width: 20px;
+            height: 10px;
+            background-color: transparent;
+        }
+
+        .openedMenu {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: black;
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            width: 30px;
+
+            .edit {
+                width: 15px;
+                height: 15px;
+                background-image: url(../../../public/images/edit.svg);
+            }
+
+            .delete {
+                width: 15px;
+                height: 15px;
+                background-image: url(../../../public/images/delete.svg);
+            }
+        }
+    }
+
+    .commentBlock {
+        margin-top: -21px;
+        background-color: rgb(44, 44, 44);
+        border: 1px solid #939393;
+        position: absolute;
+        right: 0;
+        transform: translateX(calc(100% + 20px));
+        padding: 27px 30px;
+        width: 23vw;
+        // width: 50%;
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .bodyBox {
+            flex: 2;
+
+            p {}
+
+            .comments {
+                list-style: none;
+                display: flex;
+                flex-direction: column-reverse;
+                gap: 15px;
+                max-height: 200px;
+                overflow-y: auto;
+
+                li {
+                    .date {
+                        font-size: 13px;
+                        font-weight: bold;
+                        color: rgb(133, 133, 133);
+                    }
+
+                    .body {
+                        color: white;
+                    }
+                }
+            }
+
+            .noComm {
+                color: #939393;
+            }
+        }
+
+        .sendBox {
+            display: flex;
+            gap: 10px;
+
+            input {
+                color: white;
+                background-color: transparent;
+                outline: none;
+                padding: 0px 10px 10px 0px;;
+                border: none;
+                border-bottom: 1px solid #939393;
+
+                &::placeholder {
+                    color: white;
+                    font-weight: bold;
+                }
+
+                flex: 2;
+            }
+
+            button {
+                width: 20px;
+                height: 20px;
+                // width: 10%;
+                background-image: url(../../../public/images/send.svg);
+                background-size: 100%;
+                background-repeat: no-repeat;
+                border: none;
+                background-color: transparent;
+                cursor: pointer;
+
+                &:hover {
+                    opacity: 0.5;
+                }
+            }
+        }
+    }
+}
